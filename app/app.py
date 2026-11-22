@@ -24,4 +24,5 @@ def info():
 
 if __name__ == '__main__':
     ##host ='0.0.0.0' is important for docker container to be accessible from outside the container
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    port= int(os.environ.get("PORT", 8080))
+    app.run(host='0.0.0.0', port=port)
